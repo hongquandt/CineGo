@@ -1,0 +1,527 @@
+/* === SIDEBAR CHỌN GIỜ === */
+.timings-sidebar {
+  flex-basis: 280px;
+  flex-shrink: 0;
+  background-color: var(--bg-sidebar);
+  padding: 25px;
+  border-radius: 12px;
+  height: fit-content;
+  /* Removed fixed positioning - sidebar now flows normally with scroll */
+  width: 280px;
+  z-index: 100;
+}
+
+.timings-sidebar h3 {
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: var(--text-light);
+}
+
+.timing-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.timing-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: transparent;
+  color: var(--text-light);
+  border: none;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.timing-btn:hover:not(:disabled) {
+  color: var(--text-light);
+  background-color: rgba(255, 77, 109, 0.2);
+}
+
+.timing-btn.active {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.timing-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.timing-btn .bx {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.timing-text {
+  white-space: nowrap;
+}
+
+.loading-text,
+.no-showtimes {
+  color: var(--text-gray);
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* === BOOKING CONTAINER === */
+/* Changed to center sidebar with equal spacing on both sides */
+.booking-container {
+  display: flex;
+  margin: 60px auto;
+  gap: 60px;
+  max-width: 1600px;
+  padding: 0 20px;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: center;
+}
+
+.seat-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+/* === KHU VỰC CHỌN GHẾ === */
+.seat-selection {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.seat-selection h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  text-align: center;
+  color: var(--text-light);
+}
+
+.screen-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  width: var(--seat-grid-width);
+  position: relative;
+}
+
+.screen-curve {
+  width: 100%;
+  height: 29px;
+  border-top: 2px solid var(--primary-color);
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+
+.screen-side p {
+  color: var(--text-light);
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.seat-map-wrapper {
+  width: var(--seat-grid-width);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  padding: 20px 0;
+  margin: 0 auto;
+  position: relative;
+}
+
+.seat-map {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--aisle-gap);
+  align-items: flex-start;
+  width: 100%;
+  position: relative;
+}
+
+.seat-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--row-gap);
+  align-items: flex-start;
+}
+
+.seat-block:first-child {
+  width: calc(var(--row-label-width) + (9 * var(--seat-size) + 8 * var(--seat-gap)));
+  flex-shrink: 0;
+  position: relative;
+}
+
+.seat-block:last-child {
+  width: calc(9 * var(--seat-size) + 8 * var(--seat-gap));
+  flex-shrink: 0;
+}
+
+.seat-block:first-child .seat-row:nth-child(1),
+.seat-block:first-child .seat-row:nth-child(2) {
+  position: relative;
+  margin-left: calc(
+    (var(--seat-grid-width) - (9 * var(--seat-size) + 8 * var(--seat-gap))) /
+    2 -
+    var(--row-label-width)
+  );
+  width: calc((9 * var(--seat-size) + 8 * var(--seat-gap)) + var(--row-label-width));
+}
+
+.seat-row {
+  display: flex;
+  align-items: center;
+  gap: var(--seat-gap);
+  height: var(--seat-size);
+}
+
+.seat-row.spacer-row {
+  /* Spacer row for layout */
+}
+
+.row-label {
+  width: var(--row-label-width);
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 14px;
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.seat-row.number-row {
+  height: auto;
+  margin-top: 5px;
+}
+
+.seat-row.number-row span {
+  width: var(--seat-size);
+  text-align: center;
+  color: var(--text-gray);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.seat-block:last-child .number-row {
+  padding-left: 0;
+}
+
+/* === KIỂU GHẾ === */
+.seat {
+  width: var(--seat-size);
+  height: var(--seat-size);
+  border-radius: var(--seat-radius);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.seat.available {
+  background-color: var(--bg-dark);
+  border: 1px solid var(--primary-color);
+}
+
+.seat.available:hover:not(.disabled) {
+  transform: scale(1.05);
+  background-color: var(--primary-color-30);
+}
+
+.seat.selected {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.seat.occupied {
+  background-color: var(--occupied-color);
+  border: 1px solid var(--occupied-color);
+  cursor: not-allowed;
+}
+
+.seat.held {
+  background-color: var(--primary-color-60);
+  border: 1px solid var(--primary-color);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.seat.disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.seat.empty {
+  visibility: hidden;
+}
+
+.loading-seats {
+  color: var(--text-gray);
+  font-size: 16px;
+  padding: 40px;
+  text-align: center;
+}
+
+/* === SEAT LEGEND === */
+.seat-legend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-seat {
+  width: var(--seat-size);
+  height: var(--seat-size);
+  border-radius: var(--seat-radius);
+  flex-shrink: 0;
+}
+
+.legend-seat.available {
+  background-color: var(--bg-dark);
+  border: 1px solid var(--primary-color);
+}
+
+.legend-seat.selected {
+  background-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.legend-seat.occupied {
+  background-color: var(--occupied-color);
+  border: 1px solid var(--occupied-color);
+}
+
+.legend-seat.held {
+  background-color: var(--primary-color-60);
+  border: 1px solid var(--primary-color);
+  opacity: 0.7;
+}
+
+.legend-text {
+  color: var(--text-gray);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+/* === NÚT CHECKOUT === */
+/* Added centered styling for checkout button */
+.btn-checkout {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  padding: 15px 30px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+}
+
+.btn-checkout .bx {
+  font-size: 22px;
+}
+
+.btn-checkout:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* === RESPONSIVE DESIGN === */
+/* Added responsive breakpoints */
+@media (max-width: 1200px) {
+  .booking-container {
+    gap: 50px;
+    padding: 0 20px 0 320px;
+  }
+
+  .timings-sidebar {
+    left: 30px;
+    width: 260px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .booking-container {
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  .timings-sidebar {
+    flex-basis: auto;
+    width: 100%;
+    position: static;
+    left: auto;
+    top: auto;
+  }
+
+  .timing-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+  }
+
+  .timing-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .seat-selection h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .seat-legend {
+    gap: 20px;
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-container {
+    padding: 0 10px;
+    gap: 20px;
+    margin: 20px auto;
+  }
+
+  .timings-sidebar {
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .timings-sidebar h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+
+  .timing-options {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .timing-btn {
+    padding: 8px;
+    font-size: 13px;
+    border-radius: 6px;
+  }
+
+  .timing-text {
+    font-size: 12px;
+  }
+
+  .seat-selection h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .screen-side p {
+    font-size: 12px;
+  }
+
+  .seat-map-wrapper {
+    padding: 15px 0;
+  }
+
+  .seat-legend {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .legend-item {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .btn-checkout {
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding: 12px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .booking-container {
+    padding: 0 5px;
+    gap: 15px;
+    max-width: 100%;
+  }
+
+  .timings-sidebar {
+    padding: 12px;
+  }
+
+  .timings-sidebar h3 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .timing-options {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 6px;
+  }
+
+  .timing-btn {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .timing-btn .bx {
+    font-size: 16px;
+  }
+
+  .seat-selection h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .seat-legend {
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .legend-seat {
+    width: calc(var(--seat-size) * 0.8);
+    height: calc(var(--seat-size) * 0.8);
+  }
+
+  .legend-text {
+    font-size: 12px;
+  }
+
+  .btn-checkout {
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 1200px) {
+  .booking-container {
+    gap: 50px;
+  }
+}
