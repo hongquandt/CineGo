@@ -1,0 +1,84 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Ky5\\PRN213\\New folder\\New folder\\CineGo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{93B6F5D6-6B98-4335-9300-490C4B32C756}|CineGo\\CineGo.csproj|d:\\ky5\\prn213\\new folder\\new folder\\cinego\\cinego\\models\\dtos\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B6F5D6-6B98-4335-9300-490C4B32C756}|CineGo\\CineGo.csproj|solutionrelative:cinego\\models\\dtos\\registerrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{93B6F5D6-6B98-4335-9300-490C4B32C756}|CineGo\\CineGo.csproj|d:\\ky5\\prn213\\new folder\\new folder\\cinego\\cinego\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{93B6F5D6-6B98-4335-9300-490C4B32C756}|CineGo\\CineGo.csproj|solutionrelative:cinego\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 336,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Ky5\\PRN213\\New folder\\New folder\\CineGo\\CineGo\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "CineGo\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Ky5\\PRN213\\New folder\\New folder\\CineGo\\CineGo\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "CineGo\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAwAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T18:50:58.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RegisterRequestDTO.cs",
+              "DocumentMoniker": "D:\\Ky5\\PRN213\\New folder\\New folder\\CineGo\\CineGo\\Models\\DTOs\\RegisterRequestDTO.cs",
+              "RelativeDocumentMoniker": "CineGo\\Models\\DTOs\\RegisterRequestDTO.cs",
+              "ToolTip": "D:\\Ky5\\PRN213\\New folder\\New folder\\CineGo\\CineGo\\Models\\DTOs\\RegisterRequestDTO.cs",
+              "RelativeToolTip": "CineGo\\Models\\DTOs\\RegisterRequestDTO.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAiwAIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-15T18:49:49.992Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 64,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
