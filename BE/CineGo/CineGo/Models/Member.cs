@@ -17,7 +17,13 @@ public partial class Member
 
     public string? MembershipLevel { get; set; }
 
+    public DateTime? JoinDate { get; set; }
+
+    public DateTime? LastLogin { get; set; }
+
     public virtual ICollection<Booking> Bookings { get; set; } = new List<Booking>();
 
     public virtual Customer Customer { get; set; } = null!;
+
+    public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
 }

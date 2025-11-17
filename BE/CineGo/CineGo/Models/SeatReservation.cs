@@ -17,6 +17,8 @@ public partial class SeatReservation
 
     public string Status { get; set; } = null!;
 
+    public DateTime? CreatedAt { get; set; }
+
     public virtual Booking? Booking { get; set; }
 
     public virtual Screening Screening { get; set; } = null!;
