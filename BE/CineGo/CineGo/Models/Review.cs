@@ -9,7 +9,9 @@ public partial class Review
 
     public int MovieId { get; set; }
 
-    public int CustomerId { get; set; }
+    public int? CustomerId { get; set; }
+
+    public int? MemberId { get; set; }
 
     public byte Rating { get; set; }
 
@@ -17,7 +19,13 @@ public partial class Review
 
     public string? Content { get; set; }
 
-    public virtual Customer Customer { get; set; } = null!;
+    public DateTime? PostedAt { get; set; }
+
+    public bool IsApproved { get; set; }
+
+    public virtual Customer? Customer { get; set; }
+
+    public virtual Member? Member { get; set; }
 
     public virtual Movie Movie { get; set; } = null!;
 }

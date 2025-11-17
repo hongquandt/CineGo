@@ -15,7 +15,11 @@ public partial class Payment
 
     public string Status { get; set; } = null!;
 
+    public string? TransactionID { get; set; }
+
     public DateTime? PaidAt { get; set; }
+
+    public DateTime? RefundedAt { get; set; }
 
     public virtual Booking Booking { get; set; } = null!;
 }

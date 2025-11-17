@@ -15,5 +15,7 @@ public partial class Product
 
     public bool IsAvailable { get; set; }
 
+    public int? StockQuantity { get; set; }
+
     public virtual ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
 }

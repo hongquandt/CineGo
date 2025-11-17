@@ -50,22 +50,26 @@ namespace CineGo.API.Controllers
                 FullName = registerRequest.FullName,
                 Email = registerRequest.Email,
                 Phone = registerRequest.Phone,
-                DateOfBirth = registerRequest.DateOfBirth, // Đã sửa DTO nên giờ đây khớp (DateOnly?)
+                Address = registerRequest.Address,
+                City = registerRequest.City,
+                DateOfBirth = registerRequest.DateOfBirth,
+                Gender = registerRequest.Gender,
                 IsMember = true,
-                // TODO: Gán Gender, Address, City
+                CreatedAt = DateTime.UtcNow,
+                IsActive = true
             };
 
             _context.Customers.Add(customer);
             await _context.SaveChangesAsync();
-            // Sau khi SaveChanges, customer.CustomerId (chữ d thường) đã có giá trị
 
             var member = new Member
             {
-                // SỬA LỖI: Dùng CustomerId (chữ d thường)
                 CustomerId = customer.CustomerId,
                 Username = registerRequest.Email,
                 Points = 0,
-                MembershipLevel = "Standard"
+                MembershipLevel = "Basic",
+                JoinDate = DateTime.UtcNow,
+                LastLogin = null
             };
 
             member.PasswordHash = _passwordHasher.HashPassword(member, registerRequest.Password);

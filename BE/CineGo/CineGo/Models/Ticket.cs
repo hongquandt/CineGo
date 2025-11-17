@@ -19,6 +19,14 @@ public partial class Ticket
 
     public string Status { get; set; } = null!;
 
+    public string? Barcode { get; set; }
+
+    public string? SeatLabel { get; set; }
+
+    public DateTime? IssuedAt { get; set; }
+
+    public DateTime? CheckedInAt { get; set; }
+
     public virtual Booking Booking { get; set; } = null!;
 
     public virtual Screening Screening { get; set; } = null!;

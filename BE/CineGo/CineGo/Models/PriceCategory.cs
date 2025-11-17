@@ -13,5 +13,9 @@ public partial class PriceCategory
 
     public decimal BasePrice { get; set; }
 
+    public bool IsActive { get; set; }
+
     public virtual ICollection<PriceAssignment> PriceAssignments { get; set; } = new List<PriceAssignment>();
+
+    public virtual ICollection<Screening> Screenings { get; set; } = new List<Screening>();
 }

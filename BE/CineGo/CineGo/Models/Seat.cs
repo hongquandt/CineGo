@@ -17,7 +17,11 @@ public partial class Seat
 
     public int? SeatTypeId { get; set; }
 
+    public string? Section { get; set; }
+
     public bool IsAvailable { get; set; }
+
+    public bool IsAccessible { get; set; }
 
     public virtual Auditorium Auditorium { get; set; } = null!;
 

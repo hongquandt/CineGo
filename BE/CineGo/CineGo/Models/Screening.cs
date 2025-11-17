@@ -17,11 +17,19 @@ public partial class Screening
 
     public string? Language { get; set; }
 
+    public string? Subtitles { get; set; }
+
     public string Status { get; set; } = null!;
+
+    public int? PriceCategoryId { get; set; }
+
+    public bool Is3D { get; set; }
 
     public virtual Auditorium Auditorium { get; set; } = null!;
 
     public virtual Movie Movie { get; set; } = null!;
+
+    public virtual PriceCategory? PriceCategory { get; set; }
 
     public virtual ICollection<PromotionAssignment> PromotionAssignments { get; set; } = new List<PromotionAssignment>();
 

@@ -9,6 +9,8 @@ public partial class Movie
 
     public string Title { get; set; } = null!;
 
+    public string? Synopsis { get; set; }
+
     public int DurationMinutes { get; set; }
 
     public string? Language { get; set; }
@@ -19,9 +21,17 @@ public partial class Movie
 
     public string? Rating { get; set; }
 
+    public string? PosterURL { get; set; }
+
+    public string? TrailerURL { get; set; }
+
     public string Status { get; set; } = null!;
 
+    public bool IsActive { get; set; }
+
     public virtual ICollection<MovieCast> MovieCasts { get; set; } = new List<MovieCast>();
+
+    public virtual ICollection<MovieGenre> MovieGenres { get; set; } = new List<MovieGenre>();
 
     public virtual ICollection<PromotionAssignment> PromotionAssignments { get; set; } = new List<PromotionAssignment>();
 

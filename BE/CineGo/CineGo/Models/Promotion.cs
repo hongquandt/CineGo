@@ -11,6 +11,8 @@ public partial class Promotion
 
     public string? Description { get; set; }
 
+    public string DiscountType { get; set; } = null!;
+
     public decimal? DiscountValue { get; set; }
 
     public DateTime? StartAt { get; set; }
@@ -19,7 +21,13 @@ public partial class Promotion
 
     public int? UsageLimit { get; set; }
 
+    public int UsageCount { get; set; }
+
     public bool IsActive { get; set; }
 
+    public string? AppliesTo { get; set; }
+
     public virtual ICollection<PromotionAssignment> PromotionAssignments { get; set; } = new List<PromotionAssignment>();
+
+    public virtual ICollection<PromotionUsage> PromotionUsages { get; set; } = new List<PromotionUsage>();
 }
