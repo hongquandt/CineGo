@@ -67,8 +67,13 @@ body {
   background-color: var(--bg-dark);
   color: #fff;
   overflow-x: hidden;
-  padding-top: 55px;
   font-family: "Poppins", sans-serif;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 #root {

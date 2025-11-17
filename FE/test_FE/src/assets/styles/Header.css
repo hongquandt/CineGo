@@ -9,10 +9,13 @@
   -webkit-backdrop-filter: blur(15px);
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   width: 100%;
   border-bottom: none;
   transition: background-color 0.3s ease;
+  margin: 0;
 }
 
 .logo-link {

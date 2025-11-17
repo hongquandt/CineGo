@@ -16,13 +16,27 @@ import Releases from "./releases";
 import Auth from "./auth";
 import Home from "./Home";
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+});
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <AuthProvider>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<BookingPage />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/book" element={<BookingPage />} />
+            <Route path="/movies" element={<Movies />} />
+            <Route path="/theatres" element={<Theatres />} />
+            <Route path="/releases" element={<Releases />} />
+            <Route path="/auth" element={<Auth />} />
             <Route
               path="/account"
               element={
@@ -47,12 +61,5 @@ function App() {
     </QueryClientProvider>
   );
 }
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      refetchOnWindowFocus: false,
-      retry: 1,
-    },
-  },
-});
+
 export default App;
